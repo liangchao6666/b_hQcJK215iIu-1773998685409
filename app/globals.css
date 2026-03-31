@@ -1,0 +1,666 @@
+@import 'tailwindcss';
+
+/* Tailwind CSS v4 Theme Configuration */
+@theme inline {
+  --font-sans: 'Noto Sans SC', 'Source Han Sans CN', Arial, Helvetica, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  --font-noto-sans-sc: 'Noto Sans SC', 'Source Han Sans CN', sans-serif;
+  --font-alibaba: 'Alibaba PuHuiTi', 'Noto Sans SC', sans-serif;
+  
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(0 2% 13.3%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(0 2% 13.3%);
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(0 2% 13.3%);
+  --color-primary: hsl(355 80% 42%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(330 5% 96%);
+  --color-secondary-foreground: hsl(0 2% 13.3%);
+  --color-muted: hsl(240 5% 96.5%);
+  --color-muted-foreground: hsl(0 0% 46%);
+  --color-accent: hsl(330 5% 96%);
+  --color-accent-foreground: hsl(0 2% 13.3%);
+  --color-destructive: hsl(355 80% 42%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(0 3% 88%);
+  --color-input: hsl(0 3% 88%);
+  --color-ring: hsl(355 80% 42%);
+  --color-chart-1: hsl(355 80% 42%);
+  --color-chart-2: hsl(0 0% 46%);
+  --color-chart-3: hsl(0 2% 13.3%);
+  --color-chart-4: hsl(330 5% 96%);
+  --color-chart-5: hsl(355 60% 55%);
+  --radius: 0.5rem;
+  --color-sidebar-background: hsl(0 0% 98%);
+  --color-sidebar-foreground: hsl(0 2% 13.3%);
+  --color-sidebar-primary: hsl(355 80% 42%);
+  --color-sidebar-primary-foreground: hsl(0 0% 100%);
+  --color-sidebar-accent: hsl(330 5% 96%);
+  --color-sidebar-accent-foreground: hsl(0 2% 13.3%);
+  --color-sidebar-border: hsl(0 3% 88%);
+  --color-sidebar-ring: hsl(355 80% 42%);
+}
+
+body {
+  font-family: 'Noto Sans SC', 'Source Han Sans CN', 'Microsoft YaHei', 'SimHei', Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 确保所有文本都使用正确的中文字体 */
+p, span, div, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Sans SC', 'Source Han Sans CN', 'Microsoft YaHei', 'SimHei', Arial, Helvetica, sans-serif;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+/* Alibaba PuHuiTi font classes - using separate font family names to ensure correct weight */
+.alibaba-regular {
+  font-family: 'Alibaba PuHuiTi Regular', 'Noto Sans SC', sans-serif !important;
+}
+
+.alibaba-bold {
+  font-family: 'Alibaba PuHuiTi Bold', 'Noto Sans SC', sans-serif !important;
+}
+
+.dark {
+  --color-background: hsl(0 3% 7%);
+  --color-foreground: hsl(0 0% 96%);
+  --color-card: hsl(0 3% 10%);
+  --color-card-foreground: hsl(0 0% 96%);
+  --color-popover: hsl(0 3% 10%);
+  --color-popover-foreground: hsl(0 0% 96%);
+  --color-primary: hsl(355 80% 48%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(0 3% 15%);
+  --color-secondary-foreground: hsl(0 0% 96%);
+  --color-muted: hsl(0 3% 15%);
+  --color-muted-foreground: hsl(0 0% 64%);
+  --color-accent: hsl(0 3% 15%);
+  --color-accent-foreground: hsl(0 0% 96%);
+  --color-destructive: hsl(355 70% 35%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-border: hsl(0 3% 18%);
+  --color-input: hsl(0 3% 18%);
+  --color-ring: hsl(355 80% 48%);
+  --color-chart-1: hsl(355 80% 48%);
+  --color-chart-2: hsl(0 0% 55%);
+  --color-chart-3: hsl(0 0% 80%);
+  --color-chart-4: hsl(0 3% 25%);
+  --color-chart-5: hsl(355 60% 60%);
+  --color-sidebar-background: hsl(0 3% 8%);
+  --color-sidebar-foreground: hsl(0 0% 96%);
+  --color-sidebar-primary: hsl(355 80% 48%);
+  --color-sidebar-primary-foreground: hsl(0 0% 100%);
+  --color-sidebar-accent: hsl(0 3% 15%);
+  --color-sidebar-accent-foreground: hsl(0 0% 96%);
+  --color-sidebar-border: hsl(0 3% 18%);
+  --color-sidebar-ring: hsl(355 80% 48%);
+}
+
+/* Value text slide-in animation */
+@keyframes slide-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.5s ease-out forwards;
+}
+
+/* Cube continuous float animation */
+@keyframes cube-float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-18px);
+  }
+}
+
+.animate-cube-float {
+  animation: cube-float 3s ease-in-out infinite;
+}
+
+/* Card synchronized float animation (syncs with cube-float at 3s) */
+@keyframes card-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Solution icon float animation */
+@keyframes icon-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Floating up-down animation for solution dots */
+@keyframes float-y {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Shimmer sweep animation for CTA button */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.group:hover .group-hover\:animate-icon-float,
+.group\/card1:hover .group-hover\/card1\:animate-icon-float,
+.group\/card2:hover .group-hover\/card2\:animate-icon-float,
+.group\/card3:hover .group-hover\/card3\:animate-icon-float {
+  animation: icon-float 1.5s ease-in-out infinite;
+}
+
+/* === Enhanced Cool Animations === */
+
+/* Parallax floating particles */
+@keyframes particle-float {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  25% { transform: translate(10px, -20px) scale(1.1); opacity: 1; }
+  50% { transform: translate(-5px, -35px) scale(0.9); opacity: 0.7; }
+  75% { transform: translate(15px, -15px) scale(1.05); opacity: 0.9; }
+}
+
+/* Glow pulse for hero text */
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0px 3px 5px rgba(31, 3, 8, 0.28); }
+  50% { text-shadow: 0px 3px 15px rgba(191, 25, 32, 0.4), 0 0 40px rgba(191, 25, 32, 0.15); }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Typing cursor blink */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Gradient border animation */
+@keyframes gradient-border-spin {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Section title reveal with line sweep */
+@keyframes line-sweep {
+  0% { transform: scaleX(0); transform-origin: left; }
+  100% { transform: scaleX(1); transform-origin: left; }
+}
+
+.animate-line-sweep {
+  animation: line-sweep 0.8s ease-out forwards;
+}
+
+/* Card tilt 3D effect */
+.card-3d-hover {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card-3d-hover:hover {
+  transform: rotateY(-2deg) rotateX(2deg) translateY(-6px);
+}
+
+/* Stagger reveal for grids */
+@keyframes stagger-up {
+  0% { opacity: 0; transform: translateY(30px) scale(0.97); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Number counter ticker */
+@keyframes count-up {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Magnetic hover effect */
+.magnetic-hover {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Carousel slide scale transition */
+@keyframes slide-zoom {
+  0% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.animate-slide-zoom {
+  animation: slide-zoom 5s ease-out forwards;
+}
+
+/* Smooth scroll indicator bounce */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(8px); opacity: 0.4; }
+}
+
+.animate-scroll-bounce {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+/* Ripple effect on buttons */
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.5; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* News card slide-in from left */
+@keyframes slide-left-in {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Glowing orb for background decoration */
+@keyframes orb-drift {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(30px, -20px); }
+  66% { transform: translate(-20px, 15px); }
+}
+
+/* Section divider wave */
+@keyframes wave-flow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Carousel indicator active pulse */
+@keyframes indicator-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(191, 25, 32, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(191, 25, 32, 0); }
+}
+
+.animate-indicator-pulse {
+  animation: indicator-pulse 2s ease-in-out infinite;
+}
+
+/* Parallax depth layers */
+.parallax-slow { transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); }
+.parallax-fast { transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); }
+
+/* CTA scan line */
+@keyframes cta-scan {
+  0% { top: -2px; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Product section horizontal scan line */
+@keyframes product-scan {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.product-scan-line {
+  animation: product-scan 4s ease-in-out infinite;
+}
+
+/* Rotating rings for customer cases */
+@keyframes spin-ring-cw {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes spin-ring-ccw {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+/* Number shimmer for stats */
+@keyframes number-glow {
+  0%, 100% { text-shadow: 0 0 0 rgba(191, 25, 32, 0); }
+  50% { text-shadow: 0 0 20px rgba(191, 25, 32, 0.3); }
+}
+
+.animate-number-glow {
+  animation: number-glow 2s ease-in-out infinite;
+}
+
+/* Hover glow border */
+@keyframes border-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(191, 25, 32, 0.1); }
+  50% { box-shadow: 0 0 20px rgba(191, 25, 32, 0.3), 0 0 40px rgba(191, 25, 32, 0.1); }
+}
+
+/* Footer link animated underline */
+.footer-link-animated {
+  position: relative;
+}
+.footer-link-animated::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: hsl(var(--primary));
+  transition: width 0.3s ease;
+}
+.footer-link-animated:hover::after {
+  width: 100%;
+}
+
+/* Product card 3D flip */
+.product-card-flip {
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.group:hover .product-card-flip {
+  transform: rotateY(180deg);
+}
+.product-card-front,
+.product-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.product-card-front {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Rotating ellipse rings */
+@keyframes ellipse-rotate {
+  0% { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(360deg); }
+}
+
+.ellipse-ring-slow {
+  animation: ellipse-rotate 60s linear infinite;
+  transform-origin: 50% 87.5%;
+}
+
+.ellipse-ring-mid {
+  animation: ellipse-rotate 45s linear infinite reverse;
+  transform-origin: 50% 85%;
+}
+
+.ellipse-ring-fast {
+  animation: ellipse-rotate 35s linear infinite;
+  transform-origin: 50% 82.5%;
+}
+
+/* News progress bar */
+@keyframes news-progress-fill {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.news-progress-bar {
+  transition: width 0.3s ease;
+}
+
+.news-progress-active {
+  animation: news-progress-fill 5s linear forwards;
+}
+
+/* Honor marquee scroll - 性能优化版本 */
+@keyframes honor-scroll-optimized {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes honor-scroll-reverse-optimized {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.honor-marquee-wrapper {
+  overflow: hidden;
+  contain: content;
+}
+
+/* 优化后的滚动轨道 - 使用 GPU 加速 */
+.honor-marquee-track-optimized {
+  animation: honor-scroll-optimized 35s linear infinite;
+  width: max-content;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.honor-marquee-track-optimized:hover {
+  animation-play-state: paused;
+}
+
+.honor-marquee-track-reverse-optimized {
+  animation: honor-scroll-reverse-optimized 30s linear infinite;
+  width: max-content;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.honor-marquee-track-reverse-optimized:hover {
+  animation-play-state: paused;
+}
+
+/* 保留旧类名以兼容其他地方使用 */
+.honor-marquee-track {
+  animation: honor-scroll-optimized 35s linear infinite;
+  width: max-content;
+  backface-visibility: hidden;
+}
+
+.honor-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.honor-marquee-track-reverse {
+  animation: honor-scroll-reverse-optimized 30s linear infinite;
+  width: max-content;
+  backface-visibility: hidden;
+}
+
+.honor-marquee-track-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* 荣誉卡片优化 - 减少 hover 时的重绘 */
+.honor-card {
+  contain: layout style paint;
+}
+
+/* Solution subtle flowing lines */
+@keyframes subtle-flow {
+  0% { stroke-dashoffset: 3000; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes subtle-flow-reverse {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 3000; }
+}
+.subtle-line-1 {
+  stroke-dasharray: 1200 1800;
+  animation: subtle-flow 20s linear infinite;
+}
+.subtle-line-2 {
+  stroke-dasharray: 1000 2000;
+  animation: subtle-flow-reverse 25s linear infinite;
+}
+.subtle-line-3 {
+  stroke-dasharray: 1400 1600;
+  animation: subtle-flow 30s linear infinite;
+}
+
+/* Solution image floating animation */
+@keyframes solution-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.solution-img-float {
+  animation: solution-float 4s ease-in-out infinite;
+}
+
+/* Solution content fade slide up */
+@keyframes fade-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide-up {
+  animation: fade-slide-up 0.5s ease-out forwards;
+}
+
+/* Solution image fade scale in */
+@keyframes fade-scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+.animate-fade-scale-in {
+  animation: fade-scale-in 0.6s ease-out forwards;
+}
+
+/* Customer logo marquee - 性能优化版本 */
+@keyframes customer-scroll-optimized {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes customer-scroll-reverse-optimized {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.customer-marquee-wrapper {
+  overflow: hidden;
+  contain: content;
+}
+
+.customer-marquee-track-optimized {
+  animation: customer-scroll-optimized 30s linear infinite;
+  width: max-content;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.customer-marquee-track-optimized:hover {
+  animation-play-state: paused;
+}
+
+.customer-marquee-track-reverse-optimized {
+  animation: customer-scroll-reverse-optimized 28s linear infinite;
+  width: max-content;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.customer-marquee-track-reverse-optimized:hover {
+  animation-play-state: paused;
+}
+
+/* 保留旧类名兼容 */
+.customer-marquee-track {
+  animation: customer-scroll-optimized 30s linear infinite;
+  width: max-content;
+  backface-visibility: hidden;
+}
+
+.customer-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.customer-marquee-track-reverse {
+  animation: customer-scroll-reverse-optimized 28s linear infinite;
+  width: max-content;
+  backface-visibility: hidden;
+}
+
+.customer-marquee-track-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* 客户Logo卡片优化 */
+.customer-logo-card {
+  contain: layout style paint;
+}
+
+/* 统一的跑马灯动画类 - 使用 GPU 加速 */
+@keyframes marquee-scroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marquee-scroll-reverse {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 35s linear infinite;
+  backface-visibility: hidden;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-scroll-reverse 30s linear infinite;
+  backface-visibility: hidden;
+}
+
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+
