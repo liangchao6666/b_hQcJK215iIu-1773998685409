@@ -26,22 +26,21 @@ export function getNavItems(activePath?: string): NavItem[] {
           href: "/middleware",
           children: [
             { name: "应用服务器", href: "/middleware", children: [] },
-            { name: "负载均衡软件", href: "/middleware", children: [], disabled: true },
-            { name: "分布式数据缓存中间件", href: "/middleware", children: [], disabled: true },
+            { name: "负载均衡软件", href: "/load-balancer", children: [] },
+            { name: "分布式数据缓存中间件", href: "/data-cache", children: [] },
             {
               name: "消息中间件",
-              href: "/middleware",
+              href: "/message-middleware",
               children: [
-                { name: "中创消息中间件软件", href: "/middleware", children: [], disabled: true },
-                { name: "中创高性能消息中间件软件", href: "/middleware", children: [], disabled: true },
-                { name: "中创云原生消息中间件软件", href: "/middleware", children: [], disabled: true },
-                { name: "中创高吞吐消息队列软件", href: "/middleware", children: [], disabled: true },
-              ],
-              disabled: true
+                { name: "中创消息中间件软件", href: "/message-middleware", children: [] },
+                { name: "中创高性能消息中间件软件", href: "/message-middleware", children: [] },
+                { name: "中创云原生消息中间件软件", href: "/message-middleware", children: [] },
+                { name: "中创高吞吐消息队列软件", href: "/message-middleware", children: [] },
+              ]
             },
-            { name: "工作流中间件", href: "/middleware", children: [], disabled: true },
-            { name: "企业服务总线", href: "/middleware", children: [], disabled: true },
-            { name: "中间件统一管理平台", href: "/middleware", children: [], disabled: true },
+            { name: "工作流中间件", href: "/workflow-middleware", children: [] },
+            { name: "企业服务总线", href: "/esb", children: [] },
+            { name: "中间件统一管理平台", href: "/middleware-manager", children: [] },
           ],
         },
         {
@@ -49,11 +48,11 @@ export function getNavItems(activePath?: string): NavItem[] {
           href: "/digital-platform", 
           children: [
             { name: "数据集成平台", href: "/digital-platform/data-integration", children: [] },
-            { name: "大数据分析平台", href: "/digital-platform/big-data", children: [], disabled: true },
-            { name: "业务信息和电子文件交换系统", href: "/digital-platform/file-exchange", children: [], disabled: true },
-            { name: "数据治理平台", href: "/digital-platform/data-governance", children: [], disabled: true },
-            { name: "AI模型管理平台", href: "/digital-platform/ai-model", children: [], disabled: true },
-            { name: "DTP数据传输中心", href: "/digital-platform/dtp", children: [], disabled: true },
+            { name: "大数据分析平台", href: "/big-data", children: [] },
+            { name: "业务信息和电子文件交换系统", href: "/file-exchange", children: [] },
+            { name: "数据治理平台", href: "/data-governance", children: [] },
+            { name: "AI模型管理平台", href: "/ai-model", children: [] },
+            { name: "DTP数据传输中心", href: "/dtp", children: [] },
           ],
         },
         {
