@@ -2,6 +2,7 @@
 
 import { useMemo } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Header } from "@/components/shared/header"
 import { getNavItems } from "@/components/shared/nav-data"
 
@@ -11,11 +12,7 @@ export function AIModelHeroSection() {
   return (
     <div className="relative h-[300px] w-full overflow-hidden md:h-[380px] lg:h-[420px] 3xl:h-[554px]">
       {/* Banner image */}
-      <img
-        src="/images/banners/ai-model-banner.png"
-        alt="中创AI模型管理平台"
-        className="absolute inset-0 h-full w-full object-cover object-center"
-      />
+      <Image src="/images/banners/ai-model-banner.png" alt="中创AI模型管理平台" fill className="object-cover object-center" />
 
       <Header navItems={navItems} variant="overlay" isDarkBg={false} />
 

@@ -158,7 +158,7 @@ export function ValueSection() {
     <section className="relative bg-[#F6F5F6]">
       {/* Background pattern */}
       <div className="pointer-events-none absolute bottom-0 left-0 w-full opacity-40">
-        <img src="/images/value-section-bg.png" alt="" className="block w-full" />
+        <Image src="/images/value-section-bg.png" alt="" fill className="object-cover" />
       </div>
       {/* Floating particles */}
       <div className="pointer-events-none absolute right-[4%] top-[10%] h-2.5 w-2.5 rounded-full bg-[#BF1920]/10 blur-[1px]" style={{ animation: "particle-float 8s ease-in-out infinite" }} />
