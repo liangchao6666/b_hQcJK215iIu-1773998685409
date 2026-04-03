@@ -27,7 +27,7 @@ export function LoadBalancerHeroSection() {
           className="font-sans font-bold text-[#332C2B]"
           style={{ fontSize: 'clamp(14px, 2vw, 28px)', lineHeight: '1.3' }}
         >
-          中创负载均衡软件
+          中创负载均衡软件 InforSuite LB
         </h1>
 
         {/* Red accent line */}
@@ -41,15 +41,7 @@ export function LoadBalancerHeroSection() {
           className="font-sans font-normal text-[#332C2B]"
           style={{ fontSize: 'clamp(11px, 1vw, 14px)', lineHeight: '1.5', opacity: 0.8, marginTop: 'clamp(6px, 0.8vw, 12px)' }}
         >
-          高性能、高可用的负载均衡解决方案
-        </p>
-
-        {/* Subtitle 2 */}
-        <p
-          className="font-sans font-normal text-[#332C2B]"
-          style={{ fontSize: 'clamp(11px, 1vw, 14px)', lineHeight: '1.5', opacity: 0.8, marginTop: 'clamp(4px, 0.6vw, 8px)' }}
-        >
-          为企业应用提供可靠的流量分发服务
+          轻量级、高性能、稳定高效
         </p>
       </div>
 

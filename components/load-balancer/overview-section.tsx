@@ -36,7 +36,7 @@ export function OverviewSection() {
           <ScrollReveal delay={100}>
             <div className="w-full lg:w-[440px] lg:flex-shrink-0 lg:pt-[40px] 3xl:w-[592px] 3xl:pt-[61px]">
               <p className="text-sm leading-[200%] text-[#242222] md:text-base lg:text-[16px] lg:leading-[200%] 3xl:text-[22px]">
-                中创负载均衡软件是一款高性能、高可用的企业级负载均衡产品，为企业应用提供智能流量分发、健康检查、会话保持等核心功能。产品采用先进的负载均衡算法，支持多种协议和应用场景，能够有效提升系统的可靠性和扩展性，为企业数字化转型提供有力支撑。
+                中创负载均衡软件（简称：InforSuite LB）是一款高性能的服务代理中间件，提供HTTP服务、反向代理、负载均衡并支持PHP处理动态内容等多种网络服务。具有轻量级、高性能、稳定高效等特点，主要解决高并发访问、负载均衡、静态内容缓存及Web服务加速等问题，满足企业在高流量场景下的性能和稳定性需求，降低运维成本，提升资源利用率。
               </p>
             </div>
           </ScrollReveal>
@@ -64,7 +64,7 @@ export function OverviewSection() {
                   }}
                 >
                   <Image
-                    src="/images/inforsuite-architecture.png"
+                    src="/images/load-balancer/architecture.png"
                     alt="负载均衡架构图"
                     width={489}
                     height={339}
